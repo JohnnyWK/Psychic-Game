@@ -1,27 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The Psychic Game!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
 
-    <h1>The Psychic Game</h1>
+<body class="text-center">
 
-    <h4>Guess what letter I'm thinking...</h4>
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h2 class="masthead-brand">THE ROCK'S GUESSING GAME</h2>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" href="index.html">Lay The Smack Down Again!</a>
+                </nav>
+                <img src="assets/images/The-Rock.jpg" class="img-fluid" alt="Responsive image">
+            </div>
+        </header>
 
-    <h4>Wins: <h4 id="wins"></h4> </h4>
+        <main role="main" class="inner cover">
+            <h1 class="cover-heading">Know your role! Shut your mouth! And guess which letter I'm thinking of!</h1>
+            <p class="lead" id=>
+                WINS: <span id="wins"></span>
+            </p>
+            <p class="lead">
+                LOSSES: <span id="losses"></span>
+            </p>
+            <p class="lead">
+                TURNS LEFT: <span id="turns"></span>
+            </p>
+            <p class="lead">
+                LETTERS GUESSED: <span id="lettersGuessed"></span>
+            </p>
+            <p class="lead">
+                <a href="https://youtu.be/Wss_Jf9ZQK8" class="btn btn-lg btn-secondary">Do you smell it?</a>
+            </p>
+        </main>
 
-    <h4>Losses: <h4 id="losses"></h4></h4>
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <img src="assets/images/Rock-default.gif" class="img-fluid" alt="Responsive image">
+                <p><a href="https://johnnywk.github.io/Bootstrap-Portfolio/">Johnny Kreitzmanⓒ</a></p>
+            </div>
+        </footer>
+    </div>
 
-    <h4>Guesses Left: <h4 id="turns"></h4></h4>
 
-    <h4>Letters Guessed So Far: <h4 id="lettersGuessed"></h4>
-
-
-
-<script src="assets/javascript/game.js"></script>    
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
 </body>
+
 </html>

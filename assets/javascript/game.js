@@ -25,65 +25,27 @@ function reset() {
     document.querySelector("#turns").innerHTML = turns;
     compGuess = compChoices[Math.floor(Math.random() * compChoices.length)];
 }
-// function allReset() {
-//     turns = 10;
-//     lettersGuessed = []
-//     wins = 0;
-//     losses:0
-// }
-    document.onkeyup = function (event) {
-        var userGuess = event.key
-        turns--;
-        lettersGuessed.push(userGuess);
+document.onkeyup = function (event) {
+    var userGuess = event.key
+    turns--;
+    lettersGuessed.push(userGuess);
 
-        document.querySelector("#turns").innerHTML = turns;
-        document.querySelector("#lettersGuessed").innerHTML = lettersGuessed;
+    document.querySelector("#turns").innerHTML = turns;
+    document.querySelector("#lettersGuessed").innerHTML = lettersGuessed;
 
-        if (compGuess === userGuess) {
-            wins++;
-            reset();
-            alert("You got lucky this time!  Try to guess again...");
-            document.querySelector("#wins").innerHTML = wins;
+    if (compGuess === userGuess) {
+        wins++;
+        reset();
+        alert("You got it right!  You might not be a jabroni afterall!");
+        alert("If you smell what the Rock is cooking then guess again!")
+        document.querySelector("#wins").innerHTML = wins;
+    }
+    if (!compChoices.includes(userGuess)) {
+        alert("I said a letter, jabroni!  That's not a letter...");
 
-        }
-        else {
-            checkTurns()
-        }
-        // function reset() {
-        //     turns = 10;
-        //     lettersGuessed = [];
-        // }
-        // function allReset() {
-        //     turns = 10;
-        //     lettersGuessed = []
-        console.log(compGuess)
+    }
+    else {
+        checkTurns()
     }
 
-
-// if (compChoices === userGuess) {
-//     wins++;
-//     alert("You got lucky this time!  Try to guess again...");
-//     document.querySelector("#wins").innerHTML = wins
-//     //call reset
-// }
-// else {
-//     turns--;
-//     lettersGuessed.push(userGuess);
-//     checkTurns()
-// }
-//     else if (turns === 0) {
-//     alert("YA BLEW IT!");
-//     reset();
-// }
-// else if (wins === 10) {
-//     alert(
-//         "You're a wizard, Harry!!"
-//     );
-//     allReset();
-
-// }
-// else {
-//     alert("That's not a letter jabroni!");
-
-
-// }
+}
