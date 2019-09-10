@@ -12,7 +12,7 @@ var compGuess =
 
 function checkTurns() {
     if (turns === 0) {
-        alert("Game over!")
+        alert("Ya blew it Jabroni!  Try again.")
         losses++;
         document.querySelector("#losses").innerHTML = losses;
         reset();
@@ -23,42 +23,41 @@ function reset() {
     turns = 10;
     lettersGuessed = [];
     document.querySelector("#turns").innerHTML = turns;
+    compGuess = compChoices[Math.floor(Math.random() * compChoices.length)];
 }
+// function allReset() {
+//     turns = 10;
+//     lettersGuessed = []
+//     wins = 0;
+//     losses:0
+// }
+    document.onkeyup = function (event) {
+        var userGuess = event.key
+        turns--;
+        lettersGuessed.push(userGuess);
 
-document.onkeyup = function (event) {
-    var userGuess=event.key
-    // if (compChoices.includes(event.key)){
-    //     console.log(event.key)
-    //     userChoice=event.key
-    // }else {
-    //     alert("Please guess a letter")
-    // }
-    
-    console.log(userGuess)
-    turns--;
-    lettersGuessed.push(userGuess);
+        document.querySelector("#turns").innerHTML = turns;
+        document.querySelector("#lettersGuessed").innerHTML = lettersGuessed;
 
-    document.querySelector("#turns").innerHTML = turns;
-    document.querySelector("#lettersGuessed").innerHTML = lettersGuessed;
+        if (compGuess === userGuess) {
+            wins++;
+            reset();
+            alert("You got lucky this time!  Try to guess again...");
+            document.querySelector("#wins").innerHTML = wins;
 
-    if (compGuess == userGuess) {
-        wins++;
-        reset();
-        alert("You got lucky this time!  Try to guess again...");
-        document.querySelector("#wins").innerHTML = wins;
-
+        }
+        else {
+            checkTurns()
+        }
+        // function reset() {
+        //     turns = 10;
+        //     lettersGuessed = [];
+        // }
+        // function allReset() {
+        //     turns = 10;
+        //     lettersGuessed = []
+        console.log(compGuess)
     }
-    else {
-        checkTurns()
-    }
-    // function reset() {
-    //     turns = 10;
-    //     lettersGuessed = [];
-    // }
-    // function allReset() {
-    //     turns = 10;
-    //     lettersGuessed = []
-}
 
 
 // if (compChoices === userGuess) {
